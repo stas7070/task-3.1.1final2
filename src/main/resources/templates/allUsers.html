@@ -25,12 +25,12 @@
         <td th:text="${user.surname}"></td>
         <td th:text="${user.city}"></td>
         <td><a th:href="@{users/{id}/update(id=${user.getId()})}">Update</a></td>
-        <form th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}" th:method="DELETE">
+        <form th:action="@{/users/deleteUser/{id}(id=${user.getId()})}" th:object="${user}" th:method="DELETE">
             <td><input type="submit" value="Delete"/></td>
         </form>
     </tr>
     </tbody>
 </table>
-<p><a href="/spring_mvc_war_exploded/users/new">Add User</a></p>
+<p><a href="/users/new">Add User</a></p>
 </body>
 </html>
