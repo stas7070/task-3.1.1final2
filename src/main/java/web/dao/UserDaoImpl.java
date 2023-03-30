@@ -28,8 +28,8 @@ public class UserDaoImpl implements UserDao {
     public void updateUser(Long id, User updateUser) {
         User user = getUserById(id);
         user.setName(updateUser.getName());
-        user.setSurname(updateUser.getSurname());
-        user.setCity(updateUser.getCity());
+        user.setLastName(updateUser.getLastName());
+        user.setEmail(updateUser.getEmail());
         entityManager.merge(user);
         entityManager.flush();
     }

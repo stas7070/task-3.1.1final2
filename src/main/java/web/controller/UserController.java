@@ -42,13 +42,13 @@ public class UserController {
         return "update-user";
     }
 
-    @RequestMapping("/editUser/{id}")
+    @PostMapping("/editUser/{id}")
     public String edit(@PathVariable("id") Long id, @ModelAttribute("user") User user){
         userService.updateUser(id, user);
         return "redirect:/users";
     }
 
-    @RequestMapping("/deleteUser/{id}")
+    @PostMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable Long id){ // сделано
         userService.deleteUser(id);
         return "redirect:/users";

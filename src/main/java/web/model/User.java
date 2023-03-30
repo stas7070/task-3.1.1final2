@@ -5,66 +5,65 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
     private String name;
-    @Column(name = "surname")
-    private String surname;
-    @Column(name = "city")
-    private String city;
 
-    public User() {
-    }
+    @Column(name = "lastName")
+    private String lastName;
 
-    public User(Long id, String name, String surname, String city) {
-        this.id = id;
+    @Column(name = "email")
+    private String email;
+
+    public User() {}
+
+    public User(String name, String lastName, String email) {
         this.name = name;
-        this.surname = surname;
-        this.city = city;
-    }
-
-    public Long getId() {
-        return id;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getCity() {
-        return city;
+    public Long getId() {
+        return id;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", city=" + city +
-                '}';
+        return "Person " + getId()
+                + " " + getEmail()
+                + " " + getName()
+                + " " + getLastName();
     }
 }
